@@ -1,6 +1,8 @@
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
+
+
 // Secret key for JWT
 const JWT_SECRET = 'your_secret_key';
 

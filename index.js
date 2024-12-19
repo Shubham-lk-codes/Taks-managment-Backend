@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 const cors = require('cors'); // Import CORS middleware
 const ideaRoutes = require('./routes/ideaRoutes');
 const authRoutes = require('./routes/authRoutes');
+require('dotenv').config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors()); // Enable CORS for all routes
@@ -13,7 +14,7 @@ app.use(express.json());
 
 // Database Connection
 mongoose
-  .connect('mongodb://localhost:27017/ims_connect', {
+  .connect('mongodb+srv://shubhamlonkar137:zYOMn6ft6xPBJt7B@cluster0.afb03.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -28,3 +29,5 @@ app.use('/api/auth', authRoutes);
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
+//zYOMn6ft6xPBJt7B
