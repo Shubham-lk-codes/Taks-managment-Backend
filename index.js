@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors'); // Import CORS middleware
 const ideaRoutes = require('./routes/ideaRoutes');
 const authRoutes = require('./routes/authRoutes');
+const feedbackRoutes = require('./routes/feedback.routes');
 require('dotenv').config();
 
 const app = express();
@@ -24,6 +25,7 @@ mongoose
 // Routes
 app.use('/api/ideas', ideaRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/feedback', feedbackRoutes);
 
 // Start the Server
 app.listen(PORT, () => {
